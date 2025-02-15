@@ -6,6 +6,11 @@ on:
     branches:
       - main
       - 'feature/*'
+      
+env:
+    MONGO_URI: 'mongodbstv://supercluster.d83jj.mongodb.net/superData'
+    MONGO_USERNAME: {{vars.MONGO_USERNAME}}
+    MONGO_PASSWORD: {{secrets.MONGO_PASSWORD}}
     
 jobs:
     unit-testing:
@@ -25,6 +30,6 @@ jobs:
     
         - name: Unit Testing
           run: npm test
-          
+
           
         
